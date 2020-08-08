@@ -1,0 +1,15 @@
+---
+version: "3.5"
+
+services:
+  server:
+    build:
+      args:
+        USER_ID: "${USER_ID}"
+        USER_NAME: "${USER_NAME}"
+        GROUP_ID: "${GROUP_ID}"
+        GROUP_NAME: "${GROUP_NAME}"
+        DOCKER_IMAGE_FLAVOUR: "${DOCKER_IMAGE_FLAVOUR}"
+    user: "${USER_ID}:${GROUP_ID}"
+    volumes:
+      - "${ROOT_DIR}/:/usr/src/jsonrpc:rw"
