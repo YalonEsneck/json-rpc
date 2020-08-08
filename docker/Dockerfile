@@ -18,6 +18,9 @@ RUN chmod a=rx ${ADD_USER_SCRIPT_PATH} \
  && ${ADD_USER_SCRIPT_PATH} \
  && rm ${ADD_USER_SCRIPT_PATH}
 
+RUN pip install --no-cache-dir \
+      twisted
+
 WORKDIR /usr/src/jsonrpc
 
 EXPOSE 80
